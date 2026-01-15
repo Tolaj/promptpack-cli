@@ -1,18 +1,10 @@
 #!/usr/bin/env node
 
-import { parseArgs, DEFAULT_OUT, DEFAULT_MAX_BYTES, DEFAULT_MAX_FILES } from "../src/cli/args.js";
-import { printHelp } from "../src/cli/help.js";
+import { run } from "../src/index.js";
 
-const opts = parseArgs(process.argv);
-
-if (opts.help || !opts.folder) {
-    printHelp({
-        defaultOut: DEFAULT_OUT,
-        defaultMaxBytes: DEFAULT_MAX_BYTES,
-        defaultMaxFiles: DEFAULT_MAX_FILES
+run()
+    .then(({ code }) => process.exit(code))
+    .catch((err) => {
+        console.error("Fatal:", err?.message || err);
+        process.exit(1);
     });
-    process.exit(opts.help ? 0 : 1);
-}
-
-console.log("Parsed options:", opts);
-process.exit(0);
