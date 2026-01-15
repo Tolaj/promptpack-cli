@@ -1,9 +1,25 @@
 {
   "name": "promptpack-cli",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Generate a single LLM-friendly prompt document from a folder (tree first, then file contents).",
   "author": "Swapnil Jadhav",
   "type": "module",
+  "bin": {
+    "promptpack": "./bin/promptpack.js"
+  },
+  "scripts": {
+    "start": "node ./bin/promptpack.js .",
+    "lint": "node -c ./bin/promptpack.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cli",
+    "markdown",
+    "llm",
+    "prompt"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
