@@ -1,0 +1,11 @@
+{
+  "name": "promptpack-cli",
+  "version": "1.0.0",
+  "description": "Generate a single LLM-friendly prompt document from a folder (tree first, then file contents).",
+  "author": "Swapnil Jadhav",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
